@@ -16,3 +16,13 @@ artifacts:
   paths:
     - server/node_modules/
     - client/node_modules/
+test:
+  stage: test
+  image: node:18-alpine
+  script:
+    - echo "Running tests"
+    - cd server
+    - npm run test
+    dependencies:
+      - instal
+

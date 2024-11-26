@@ -1,0 +1,18 @@
+stages:
+  - initial
+
+instal:
+  stage: initial
+  image: node:18-alpine
+  script:
+    - echo "Installing dependencies"
+    - cd server
+    - npm ci
+    - cd ..
+    - cd client
+    - npm ci
+
+artifacts:
+  paths:
+    - server/node_modules/
+    - client/node_modules/
